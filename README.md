@@ -29,7 +29,15 @@ using `val data =spark.read.format("csv").option("header","True").load("game_of_
 To analyse the count of each word, we need to get the most used words using `words = words.groupBy("value").count().orderBy($"count".desc)`. However, there are some meaningless prepsitions and articles. So we delete them from the dataframe and saved to csv file by command
 `words.write.option(“header”,“true”).csv(“words.csv”).`
 
-Then, we select the most liked and disliked show and their information based on their imdb_rating using `val last_video_msg =data.orderBy("imdb_rating").first()` and `val first_video_msg`
+We select the most liked and disliked show and their information based on their imdb_rating using `val last_video_msg = data.orderBy("imdb_rating").first()` and `val first_video_msg = = data.orderBy("imdb_rating".desc).first()`.
+
+We create a new dataframe to store season and imdb_rating information for calculating the average rating of each season. `val season_df =data.select(data("season"),data("imdb_rating").cast("float"))`, `def avg_rating(i:Any):org.apache.spark.sql.DataFrame ={return season_df.filter($"season".equalTo(
+i)).agg(mean($"imdb_rating")as "mean rating_"+i).toDF()}`
+
+We generate another csv file about directors and average ratings of TV shows directed by each of them.
+
+## Python part
+
 
 
 
