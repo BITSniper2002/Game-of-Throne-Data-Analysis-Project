@@ -12,6 +12,12 @@ matplotlib 3.2.2
 word cloud 1.5.0  
 seaborn 0.11.2  
 
-# Dataset
-Stored in Dataset folder 
+# Datasets
+Stored in Datasets folder. There are two csv files including data about episode, ratings and episode summary description, respectively.
+
+# Analysis Part
+
+## Pre-processing
+Firstly we read the files and use parse_dates parameter is to format data type.We notice that there are same columns in two files. So we decide to merge them into one file based on title and publish date. Then we ouput the newly merged file.
+
 
