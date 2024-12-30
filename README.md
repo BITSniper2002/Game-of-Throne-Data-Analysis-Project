@@ -40,11 +40,16 @@ We generate another csv file about directors and average ratings of TV shows dir
 Here we will show the result of our analysis.
 
 We load the words.csv file which contains separated word of descriptions and generate word cloud for that file.
-![word_cloud](pics/word_cloud_result.png)
 
-The imdb_rating suffers a sharp decline in season 8.
-![rating](pics/rating.png)
+<img src="pics/word_cloud_result.png" alt="word_cloud" width="300">
 
+
+The imdb_rating suffers a sharp decline in season 8, but the amount of viwers are continuously increasing
+
+<div style="display: inline-block;">
+  <img src="pics/rating.png" alt="rating" width="300"> 
+  <img src="pics/viewers.png" alt="viewers" width="300"> 
+</div>
 
 
 
