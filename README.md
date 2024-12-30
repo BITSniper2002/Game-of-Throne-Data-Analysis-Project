@@ -37,7 +37,7 @@ i)).agg(mean($"imdb_rating")as "mean rating_"+i).toDF()}`
 We generate another csv file about directors and average ratings of TV shows directed by each of them.
 
 ## Python part
-Here we will show the result of our analysis.
+Here we will show part of the result of our analysis.
 
 We load the words.csv file which contains separated word of descriptions and generate word cloud for that file.
 
