@@ -51,7 +51,9 @@ The imdb_rating suffers a sharp decline in season 8, but the amount of viwers ar
   <img src="pics/viewers.png" alt="viewers" width="300"> 
 </div>
 
+For directors,the average score of David Benioff & D.B.Weiss is the lowest among them, while the scores of other directors are almost the same.
 
+<img src="pics/director_data.png" alt="word_cloud" width="600">
 
 
 
