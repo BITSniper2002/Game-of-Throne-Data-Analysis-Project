@@ -38,7 +38,7 @@ We generate another csv file about directors and average ratings of TV shows dir
 
 ## Python part
 We load the words.csv file which contains separated word of descriptions and generate word cloud for that file.
-![word_cloud]()
+![word_cloud](word_cloud.png)
 
 
 
