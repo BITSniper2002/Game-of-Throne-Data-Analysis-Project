@@ -20,7 +20,18 @@ Stored in Datasets folder. There are two csv files including data about episode,
 ## Pre-processing
 Firstly we read the files and use parse_dates parameter is to format data type.We notice that there are same columns in two files. So we decide to merge them into one file based on title and publish date. Then we ouput the newly merged file.
 
-We put the merged file into hadoop directory, start the hdfs `./sbin/start-dfs.sh` and put the file into hdfs `./bin/hdfs dfs -put game_of_thrones.csv /user/james/data`.
+## Spark part
+We put the merged file into hadoop directory, start the hdfs `./sbin/start-dfs.sh` and put the file into hdfs `./bin/hdfs dfs -put game_of_thrones.csv /user/username/data`.
+
+After uploading the file, we enter spark-shell and read the file into dataframe type 
+using `val data =spark.read.format("csv").option("header","True").load("game_of_thrones.csv")` and get single word in description column using `val desc_df=data.select(data("desc"))`.
+
+To analyse the count of each word, we need to get the most used words using `words = words.groupBy("value").count().orderBy($"count".desc)`. However, there are some meaningless prepsitions and articles. So we delete them from the dataframe and saved to csv file by command
+`words.write.option(“header”,“true”).csv(“words.csv”).`
+
+Then, we select the most liked and disliked show and their information based on their imdb_rating using `val last_video_msg =data.orderBy("imdb_rating").first()` and `val first_video_msg`
+
+
 
 
 
